@@ -8,7 +8,7 @@
     <p>Film Critics Review: '{{movie.summary}}'</p>
   </div>
   <div class = "center">
-    <StarRating @rating-selected ="setRating" v-bind:increment="0.5" v-bind:max-rating="5" v-bind:show-rating="false" inactive-color="#666" active-color="#f00"></StarRating>
+    <StarRating @rating-selected ="setRating" v-bind:increment="0.5" v-bind:max-rating="5" v-bind:show-rating="false" inactive-color="#666" active-color="#339BFF"></StarRating>
     <p><i>Average Rating: {{movie.ratings.avg}}</i></p>
     <h3>Add a Comment</h3>
     <form v-on:submit.prevent="addComment">
@@ -79,7 +79,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;

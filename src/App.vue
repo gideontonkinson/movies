@@ -2,7 +2,8 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/browse">Browse by Genere</router-link> | 
+      <router-link to="/watchlist">Watchlist</router-link>
     </nav>
     <router-view/>
     <div class = "center">
@@ -27,9 +28,10 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
+  font-size: 20px;
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #378ad8;
 }
 </style>

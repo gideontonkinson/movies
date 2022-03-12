@@ -1,17 +1,20 @@
 <template>
 <div class="wrapper">
   <div class="movies">
-    <router-link v-for="movie in movies" :key="movie.id" :to="'/movie/' + movie.id">
+    <div v-for="movie in movies" :key="movie.id">
       <div class = "movie">
+        <router-link  :to="'/movie/' + movie.id">
         <div class="info">
           <h1>{{movie.title}}</h1>
-          <p>{{movie.genere}}</p>
+          <p>Genere: {{movie.genere}}</p>
+          <p>Director: {{movie.director}}</p>
+          <p>Studio: {{movie.studio}}</p>
+          <p>Average Community Rating: {{movie.ratings.avg}}</p>
         </div>
-        <div>
-          <button class="auto" v-on:click="add(movie)">Add to Watchlist</button>
-        </div>
+        </router-link>
+        <button class="auto" v-on:click="add(movie)">Add to Watchlist</button>
       </div>
-    </router-link>
+    </div>
   </div>
 </div>
 </template>
@@ -24,21 +27,21 @@ export default {
   },
     methods: {
         add(movie){
-            var tempMovie = this.$root.$data.watchlist.filter((mov => mov.id === movie.id));
-            if(tempMovie.length > 0){
-                return;
-            } else {
-                this.$root.$data.watchlist.push({
-                id: movie.id,
-                title: movie.title,
-                genere: movie.genere,
-                director: movie.director,
-                studio: movie.studio,
-                summary: movie.summary,
-                ratings: movie.ratings,
-                comments: movie.comments
-            });
-            }
+          var tempMovie = this.$root.$data.watchlist.filter((mov => mov.id === movie.id));
+          if(tempMovie.length > 0){
+            return;
+          } else {
+            this.$root.$data.watchlist.push({
+            id: movie.id,
+            title: movie.title,
+            genere: movie.genere,
+            director: movie.director,
+            studio: movie.studio,
+            summary: movie.summary,
+            ratings: movie.ratings,
+            comments: movie.comments
+          });
+        }
         }
     },
 }
@@ -61,23 +64,25 @@ export default {
 }
 
 .info {
-  background: #F2921D;
+  background: #42a146;
   color: #000;
-  padding: 10px 30px;
-  height: 80px;
+  padding: 10px 15px;
+  height: 230px;
+  align-content: center;
 }
 
 .info h1 {
-  font-size: 16px;
+  font-size: 18px;
+  margin: 7px 0px;
 }
 
 .info h2 {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .info p {
-  margin: 0px;
-  font-size: 10px;
+  margin: 5px 0px;
+  font-size: 14px;
 }
 
 
@@ -86,6 +91,7 @@ button {
   background: #666;
   color: white;
   border: none;
+  width: 100%;
 }
 
 button:hover {
@@ -98,5 +104,9 @@ button:active {
 
 .auto {
   margin-left: auto;
+}
+
+a {
+  text-decoration: none;
 }
 </style>
