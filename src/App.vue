@@ -5,6 +5,9 @@
       <router-link to="/about">About</router-link>
     </nav>
     <router-view/>
+    <div class = "center">
+      <a href = "https://github.com/BYUCS260/grocery-store-gideontonkinson" >GitHub Repository</a>
+    </div>  
   </div>
 </template>
 
