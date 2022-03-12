@@ -7,7 +7,7 @@
     </nav>
     <router-view/>
     <div class = "center">
-      <a href = "https://github.com/BYUCS260/grocery-store-gideontonkinson" >GitHub Repository</a>
+      <a href = "https://github.com/gideontonkinson/movies.git" >GitHub Repository</a>
     </div>  
   </div>
 </template>
